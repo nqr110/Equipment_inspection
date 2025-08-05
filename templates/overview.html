@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>设备检查单 - 总览</title>
+    <title>人工智能+ 设备检查单</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/overview.css') }}">
 </head>
 <body class="dark-theme">
@@ -11,8 +11,8 @@
         <header class="header">
             <div class="header-content">
                 <div class="title-section">
-                    <h1 class="main-title">设备检查单 - 总览</h1>
-                    <p class="subtitle">实时监控检查进度</p>
+                    <h1 class="main-title">“人工智能+” 设备检查单</h1>
+                    <p class="subtitle">实时检查进度</p>
                 </div>
                 <div class="progress-circle-section">
                     <div class="progress-circle-container">
@@ -46,22 +46,6 @@
             </div>
         </div>
         
-        <!-- 时间信息 -->
-        <div class="time-info">
-            <div class="time-card">
-                <h3>创建时间</h3>
-                <p id="created-at">-</p>
-            </div>
-            <div class="time-card">
-                <h3>最后更新</h3>
-                <p id="updated-at">-</p>
-            </div>
-            <div class="time-card">
-                <h3>当前状态</h3>
-                <p id="overall-status">-</p>
-            </div>
-        </div>
-        
         <!-- 统计卡片 -->
         <div class="stats-container">
             <h2 class="stats-title">检查统计</h2>
@@ -88,6 +72,25 @@
                         <h3>待检查</h3>
                         <div class="stat-number" id="pending-items">0</div>
                     </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 时间信息 -->
+        <div class="time-info">
+            <h2 class="time-title">时间信息</h2>
+            <div class="time-cards-grid">
+                <div class="time-card">
+                    <h3>创建时间</h3>
+                    <p id="created-at">-</p>
+                </div>
+                <div class="time-card">
+                    <h3>最后更新</h3>
+                    <p id="updated-at">-</p>
+                </div>
+                <div class="time-card">
+                    <h3>当前状态</h3>
+                    <p id="overall-status">-</p>
                 </div>
             </div>
         </div>

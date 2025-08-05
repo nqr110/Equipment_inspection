@@ -3,16 +3,16 @@
         {
             "id": "2176a795-d9b0-4be3-a863-52c582b39c5d",
             "name": "文件配置清除_软件开发",
-            "status": "pending",
-            "completed_by": "",
-            "completed_at": ""
+            "status": "completed",
+            "completed_by": "软件开发工程师",
+            "completed_at": "2025-08-05 17:46:51"
         },
         {
             "id": "01700b6a-2b7f-4477-a977-321b1c04e8f5",
             "name": "同步实例创建列表_软件开发",
-            "status": "pending",
-            "completed_by": "",
-            "completed_at": ""
+            "status": "completed",
+            "completed_by": "软件开发工程师",
+            "completed_at": "2025-08-05 17:46:51"
         },
         {
             "id": "941e626c-8fd5-4517-80ad-1b62f16362b6",
@@ -115,5 +115,5 @@
     ],
     "overall_status": "in_progress",
     "created_at": "2025-08-02 15:41:40",
-    "updated_at": "2025-08-05 11:46:21"
+    "updated_at": "2025-08-05 17:46:51"
 }
