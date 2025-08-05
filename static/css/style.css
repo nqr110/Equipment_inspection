@@ -1,0 +1,351 @@
+/* GitHub风格全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background-color: #f6f8fa;
+    min-height: 100vh;
+    padding: 20px;
+    color: #24292e;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid #e1e4e8;
+    overflow: hidden;
+}
+
+/* GitHub风格标题 */
+h1 {
+    background-color: #f6f8fa;
+    color: #24292e;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+/* GitHub风格头部信息 */
+.header-info {
+    background-color: white;
+    padding: 16px;
+    border-bottom: 1px solid #e1e4e8;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.header-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #586069;
+    background-color: #f6f8fa;
+    padding: 5px 12px;
+    border-radius: 6px;
+    border: 1px solid #e1e4e8;
+}
+
+.header-info span {
+    font-weight: 600;
+    color: #0366d6;
+}
+
+/* 完成人输入栏样式 */
+.completer-section {
+    padding: 16px;
+    background: white;
+    border-bottom: 1px solid #e1e4e8;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.completer-section label {
+    font-weight: 600;
+    color: #24292e;
+    min-width: 60px;
+}
+
+#completer-name {
+    flex: 1;
+    max-width: 300px;
+}
+
+/* GitHub风格信息栏 */
+.progress-info {
+    padding: 16px;
+    background-color: white;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+.progress-info h3 {
+    margin: 0 0 16px 0;
+    color: #24292e;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.progress-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.stat-item {
+    background-color: #f6f8fa;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-align: center;
+    min-width: 80px;
+    border: 1px solid #e1e4e8;
+}
+
+.stat-label {
+    display: block;
+    font-size: 12px;
+    color: #586069;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.stat-item span:last-child {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0366d6;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 16px;
+    background: #e1e4e8;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #2ea44f;
+    width: 0%;
+    transition: width 0.5s ease;
+    border-radius: 6px;
+}
+
+/* GitHub风格表单元素 */
+.github-input,
+.github-select {
+    padding: 5px 12px;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 20px;
+    outline: none;
+    transition: all 0.2s ease;
+    background-color: #f6f8fa;
+}
+
+.github-input:focus,
+.github-select:focus {
+    border-color: #0366d6;
+    box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.1);
+    background-color: white;
+}
+
+.github-select {
+    height: 32px;
+    min-width: 200px;
+}
+
+/* GitHub风格添加项目区域 */
+.add-item-section {
+    padding: 16px;
+    background: white;
+    border-bottom: 1px solid #e1e4e8;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+#new-item-name {
+    flex: 1;
+}
+
+#add-item-btn {
+    padding: 8px 16px;
+    background-color: #2ea44f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+#add-item-btn:hover {
+    background-color: #2c974b;
+}
+
+/* GitHub风格表格 */
+#inspection-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+}
+
+#inspection-table th {
+    background-color: #f6f8fa;
+    color: #24292e;
+    padding: 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+#inspection-table td {
+    padding: 16px;
+    border-bottom: 1px solid #e1e4e8;
+    vertical-align: middle;
+    font-size: 14px;
+    background-color: white;
+}
+
+#inspection-table tbody tr:hover {
+    background-color: #f6f8fa;
+}
+
+/* GitHub风格状态标签 */
+.status-pending {
+    background-color: #fff8c5;
+    color: #7d5c00;
+    padding: 4px 8px;
+    border-radius: 2em;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+    border: 1px solid rgba(175, 145, 0, 0.2);
+}
+
+.status-completed {
+    background-color: #ddf4ff;
+    color: #0969da;
+    padding: 4px 8px;
+    border-radius: 2em;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+    border: 1px solid rgba(9, 105, 218, 0.2);
+}
+
+.status-cancelled {
+    background-color: #ffebe9;
+    color: #cf222e;
+    padding: 4px 8px;
+    border-radius: 2em;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+    border: 1px solid rgba(207, 34, 46, 0.2);
+}
+
+/* GitHub风格网络状态 */
+.status-online {
+    background-color: #ddf4ff;
+    color: #0969da;
+    padding: 4px 8px;
+    border-radius: 2em;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+    border: 1px solid rgba(9, 105, 218, 0.2);
+}
+
+.status-offline {
+    background-color: #f6f8fa;
+    color: #57606a;
+    padding: 4px 8px;
+    border-radius: 2em;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+    border: 1px solid rgba(175, 184, 193, 0.2);
+}
+
+/* GitHub风格按钮 */
+.btn {
+    padding: 6px 12px;
+    border: 1px solid rgba(27, 31, 36, 0.15);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    margin: 0 3px;
+    background-color: #f6f8fa;
+    color: #24292e;
+}
+
+.btn-complete {
+    background-color: #2da44e;
+    color: white;
+    border-color: rgba(27, 31, 36, 0.15);
+}
+
+.btn-complete:hover {
+    background-color: #2c974b;
+}
+
+
+
+.btn-delete {
+    background-color: #f6f8fa;
+    color: #cf222e;
+}
+
+.btn-delete:hover {
+    background-color: #ffebe9;
+}
+
+
+
+/* GitHub风格响应式设计 */
+@media (max-width: 768px) {
+    .header-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .add-item-section {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+    
+    #inspection-table {
+        font-size: 12px;
+    }
+    
+    #inspection-table th,
+    #inspection-table td {
+        padding: 8px;
+    }
+    
+
+}

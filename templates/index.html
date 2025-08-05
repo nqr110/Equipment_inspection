@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设备检查单</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>设备检查单</h1>
+        <div class="header-info">
+            <p>创建时间: <span id="created-at"></span></p>
+            <p>更新时间: <span id="updated-at"></span></p>
+            <p>当前状态: <span id="overall-status"></span></p>
+            <p>网络状态: <span id="network-status" class="status-online">在线</span></p>
+        </div>
+        
+        <!-- 完成人输入栏 -->
+        <div class="completer-section">
+            <label for="completer-name">完成人:</label>
+            <select id="completer-name" class="github-select">
+                <option value="" selected disabled>请选择完成人</option>
+                <option value="软件开发工程师">软件开发工程师</option>
+                <option value="系统架构设计师">系统架构设计师</option>
+                <option value="深度学习工程师">深度学习工程师</option>
+            </select>
+        </div>
+        
+        <!-- 综合信息栏 -->
+        <div class="progress-info">
+            <h3>检查进度</h3>
+            <div class="progress-stats">
+                <div class="stat-item">
+                    <span class="stat-label">总计:</span>
+                    <span id="total-items">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">已完成:</span>
+                    <span id="completed-items">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">完成进度:</span>
+                    <span id="completion-rate">0%</span>
+                </div>
+            </div>
+            <div class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+        </div>
+        <div class="add-item-section">
+            <input type="text" id="new-item-name" placeholder="输入新检查项名称" class="github-input">
+            <button id="add-item-btn" class="btn btn-complete">添加检查项</button>
+        </div>
+        <table id="inspection-table">
+            <thead>
+                <tr>
+                    <th>检查项</th>
+                    <th>状态</th>
+                    <th>完成人</th>
+                    <th>完成时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 检查项将在这里动态加载 -->
+            </tbody>
+        </table>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

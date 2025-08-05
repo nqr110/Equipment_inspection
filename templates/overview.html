@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设备检查单 - 总览</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/overview.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>设备检查单 - 总览</h1>
+            <p class="subtitle">实时监控检查进度</p>
+        </header>
+        
+        <!-- 总体统计卡片 -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-content">
+                    <h3>总计项目</h3>
+                    <div class="stat-number" id="total-items">0</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <div class="stat-content">
+                    <h3>已完成</h3>
+                    <div class="stat-number" id="completed-items">0</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">⏳</div>
+                <div class="stat-content">
+                    <h3>待检查</h3>
+                    <div class="stat-number" id="pending-items">0</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 进度条 -->
+        <div class="progress-section">
+            <h2>完成进度</h2>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="completion-rate">0%</span>
+                    <span id="progress-detail">0/0</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 检查项详情 -->
+        <div class="items-section">
+            <h2>检查项详情</h2>
+            <div class="items-grid" id="items-grid">
+                <!-- 检查项卡片将在这里动态加载 -->
+            </div>
+        </div>
+        
+        <!-- 时间信息 -->
+        <div class="time-info">
+            <div class="time-card">
+                <h3>创建时间</h3>
+                <p id="created-at">-</p>
+            </div>
+            <div class="time-card">
+                <h3>最后更新</h3>
+                <p id="updated-at">-</p>
+            </div>
+            <div class="time-card">
+                <h3>当前状态</h3>
+                <p id="overall-status">-</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='js/overview.js') }}"></script>
+</body>
+</html> 
