@@ -6,53 +6,37 @@
     <title>设备检查单 - 总览</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/overview.css') }}">
 </head>
-<body>
+<body class="dark-theme">
     <div class="container">
         <header class="header">
-            <h1>设备检查单 - 总览</h1>
-            <p class="subtitle">实时监控检查进度</p>
+            <div class="header-content">
+                <div class="title-section">
+                    <h1 class="main-title">设备检查单 - 总览</h1>
+                    <p class="subtitle">实时监控检查进度</p>
+                </div>
+                <div class="progress-circle-section">
+                    <div class="progress-circle-container">
+                        <div class="progress-circle">
+                            <svg class="progress-svg" viewBox="0 0 160 160">
+                                <defs>
+                                    <linearGradient id="progress-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <circle class="progress-bg" cx="80" cy="80" r="65"></circle>
+                                <circle class="progress-fill" cx="80" cy="80" r="65"></circle>
+                            </svg>
+                            <div class="progress-text">
+                                <span class="progress-title">完成进度</span>
+                                <span id="completion-rate">0%</span>
+                                <span id="progress-detail">0/0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </header>
-        
-        <!-- 总体统计卡片 -->
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-icon">📊</div>
-                <div class="stat-content">
-                    <h3>总计项目</h3>
-                    <div class="stat-number" id="total-items">0</div>
-                </div>
-            </div>
-            
-            <div class="stat-card">
-                <div class="stat-icon">✅</div>
-                <div class="stat-content">
-                    <h3>已完成</h3>
-                    <div class="stat-number" id="completed-items">0</div>
-                </div>
-            </div>
-            
-            <div class="stat-card">
-                <div class="stat-icon">⏳</div>
-                <div class="stat-content">
-                    <h3>待检查</h3>
-                    <div class="stat-number" id="pending-items">0</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- 进度条 -->
-        <div class="progress-section">
-            <h2>完成进度</h2>
-            <div class="progress-container">
-                <div class="progress-bar">
-                    <div id="progress-fill" class="progress-fill"></div>
-                </div>
-                <div class="progress-text">
-                    <span id="completion-rate">0%</span>
-                    <span id="progress-detail">0/0</span>
-                </div>
-            </div>
-        </div>
         
         <!-- 检查项详情 -->
         <div class="items-section">
@@ -75,6 +59,36 @@
             <div class="time-card">
                 <h3>当前状态</h3>
                 <p id="overall-status">-</p>
+            </div>
+        </div>
+        
+        <!-- 统计卡片 -->
+        <div class="stats-container">
+            <h2 class="stats-title">检查统计</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-content">
+                        <h3>总计项目</h3>
+                        <div class="stat-number" id="total-items">0</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-content">
+                        <h3>已完成</h3>
+                        <div class="stat-number" id="completed-items">0</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">⏳</div>
+                    <div class="stat-content">
+                        <h3>待检查</h3>
+                        <div class="stat-number" id="pending-items">0</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

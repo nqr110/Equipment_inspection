@@ -256,5 +256,8 @@ def update_item_status(item_id):
 
 if __name__ == '__main__':
     # 启动主应用在4999端口
-    socketio.run(app, host='127.0.0.1', port=4999, debug=True)
-    
+    socketio.run(app, host='192.168.1.99', port=4999, debug=True)
+
+
+# http://192.168.1.99:4999
+# http://192.168.1.99:4999/overview

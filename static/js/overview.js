@@ -102,7 +102,7 @@ function animateNumberChange(elementId, newValue) {
     }
 }
 
-// 更新进度条
+// 更新圆环进度条
 function updateProgress() {
     const items = inspectionData.items || [];
     const totalItems = items.length;
@@ -110,21 +110,48 @@ function updateProgress() {
     
     const progressPercentage = totalItems > 0 ? (completedItems / totalItems) * 100 : 0;
     
-    const progressFill = document.getElementById("progress-fill");
+    const progressFill = document.querySelector(".progress-fill");
+    const progressText = document.querySelector(".progress-text");
     const completionRate = document.getElementById("completion-rate");
     const progressDetail = document.getElementById("progress-detail");
     
-    progressFill.style.width = `${progressPercentage}%`;
-    completionRate.textContent = `${progressPercentage.toFixed(1)}%`;
-    progressDetail.textContent = `${completedItems}/${totalItems}`;
+    // 计算圆环进度
+    const circumference = 2 * Math.PI * 65; // r=65
+    const strokeDashoffset = circumference - (progressPercentage / 100) * circumference;
+    
+    progressFill.style.strokeDashoffset = strokeDashoffset;
+    
+    // 更新文字内容
+    const newCompletionRate = `${progressPercentage.toFixed(1)}%`;
+    const newProgressDetail = `${completedItems}/${totalItems}`;
+    
+    // 如果内容有变化，添加动画效果
+    if (completionRate.textContent !== newCompletionRate || progressDetail.textContent !== newProgressDetail) {
+        progressText.classList.add('updated');
+        
+        setTimeout(() => {
+            completionRate.textContent = newCompletionRate;
+            progressDetail.textContent = newProgressDetail;
+        }, 150);
+        
+        setTimeout(() => {
+            progressText.classList.remove('updated');
+        }, 600);
+    } else {
+        completionRate.textContent = newCompletionRate;
+        progressDetail.textContent = newProgressDetail;
+    }
     
     // 根据完成度改变进度条颜色
     if (progressPercentage >= 100) {
-        progressFill.style.background = "linear-gradient(90deg, #2ea44f, #2c974b)";
+        progressFill.style.stroke = "#22c55e";
+        progressFill.style.filter = "drop-shadow(0 0 10px rgba(34, 197, 94, 0.6))";
     } else if (progressPercentage >= 50) {
-        progressFill.style.background = "linear-gradient(90deg, #0969da, #0858b9)";
+        progressFill.style.stroke = "#4facfe";
+        progressFill.style.filter = "drop-shadow(0 0 10px rgba(79, 172, 254, 0.6))";
     } else {
-        progressFill.style.background = "linear-gradient(90deg, #7d5c00, #6b4c00)";
+        progressFill.style.stroke = "#f59e0b";
+        progressFill.style.filter = "drop-shadow(0 0 10px rgba(245, 158, 11, 0.6))";
     }
 }
 
