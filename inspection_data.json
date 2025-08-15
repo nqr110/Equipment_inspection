@@ -1,119 +1,112 @@
 {
     "items": [
         {
-            "id": "2176a795-d9b0-4be3-a863-52c582b39c5d",
-            "name": "文件配置清除_软件开发",
-            "status": "completed",
-            "completed_by": "软件开发工程师",
-            "completed_at": "2025-08-05 17:46:51"
-        },
-        {
-            "id": "01700b6a-2b7f-4477-a977-321b1c04e8f5",
-            "name": "同步实例创建列表_软件开发",
-            "status": "completed",
-            "completed_by": "软件开发工程师",
-            "completed_at": "2025-08-05 17:46:51"
-        },
-        {
-            "id": "941e626c-8fd5-4517-80ad-1b62f16362b6",
-            "name": "检查文件共享服务器_软件开发",
-            "status": "pending",
-            "completed_by": "",
-            "completed_at": ""
-        },
-        {
-            "id": "8ac0d4f8-7589-4546-8c79-6c5d95dc88e7",
-            "name": "服务器重置_软件开发",
-            "status": "pending",
-            "completed_by": "",
-            "completed_at": ""
-        },
-        {
             "id": "293b2b86-dd6a-425c-9346-716ad6009a7d",
-            "name": "检查openssl秘钥生成_深度学习",
-            "status": "pending",
-            "completed_by": "",
-            "completed_at": ""
+            "name": "检查openssl秘钥生成_AI训练",
+            "status": "completed",
+            "completed_by": "人工智能训练师",
+            "completed_at": "2025-08-13 10:38:07"
         },
         {
             "id": "529e64d3-0b3b-40a7-a218-6358b81c4111",
-            "name": "检查代码状态_深度学习",
-            "status": "pending",
-            "completed_by": "",
-            "completed_at": ""
-        },
-        {
-            "id": "94351b51-19b9-4862-97c5-35fd143aa589",
-            "name": "启动PPT_深度学习",
-            "status": "pending",
-            "completed_by": "",
-            "completed_at": ""
+            "name": "检查代码状态_AI训练",
+            "status": "completed",
+            "completed_by": "人工智能训练师",
+            "completed_at": "2025-08-13 10:35:53"
         },
         {
             "id": "552c2d67-8f9e-4ff5-8bba-4f4299f98723",
-            "name": "SSH连接检查_深度学习",
-            "status": "pending",
-            "completed_by": "",
-            "completed_at": ""
+            "name": "SSH连接检查_AI训练",
+            "status": "completed",
+            "completed_by": "人工智能训练师",
+            "completed_at": "2025-08-13 10:34:35"
         },
         {
             "id": "881ad0d0-0cfb-4521-af14-9d889a3e21fc",
-            "name": "vscode连接检查_深度学习",
-            "status": "pending",
-            "completed_by": "",
-            "completed_at": ""
+            "name": "vscode连接检查_AI训练",
+            "status": "completed",
+            "completed_by": "人工智能训练师",
+            "completed_at": "2025-08-13 10:34:36"
         },
         {
             "id": "54683df4-08f5-4718-9e4e-2ee53311b5c3",
             "name": "服务器连接检查_系统架构",
-            "status": "pending",
-            "completed_by": "",
-            "completed_at": ""
+            "status": "completed",
+            "completed_by": "系统架构设计师",
+            "completed_at": "2025-08-13 10:32:16"
         },
         {
             "id": "2864ba9b-334c-410c-a944-05d056f0336b",
-            "name": "启动Windows虚拟机_深度学习",
-            "status": "pending",
-            "completed_by": "",
-            "completed_at": ""
+            "name": "启动Windows虚拟机_AI训练",
+            "status": "completed",
+            "completed_by": "人工智能训练师",
+            "completed_at": "2025-08-13 10:35:50"
         },
         {
             "id": "b4b75c43-fc2c-4d4a-8439-97183039c5c4",
             "name": "PowerPoint运行检查_系统架构",
-            "status": "pending",
-            "completed_by": "",
-            "completed_at": ""
+            "status": "completed",
+            "completed_by": "系统架构设计师",
+            "completed_at": "2025-08-13 10:32:23"
         },
         {
             "id": "55c3c73f-2df3-4930-8036-6f5ee71f7eb1",
             "name": "硬件连接以及设备运行_系统架构",
-            "status": "pending",
-            "completed_by": "",
-            "completed_at": ""
+            "status": "completed",
+            "completed_by": "系统架构设计师",
+            "completed_at": "2025-08-13 10:33:24"
         },
         {
             "id": "8348948b-bcee-44d0-92b4-8be33f0ec33b",
             "name": "开发环境检查_系统架构",
-            "status": "pending",
-            "completed_by": "",
-            "completed_at": ""
-        },
-        {
-            "id": "0a761a73-a9c6-4284-9650-fe0f068a9a8c",
-            "name": "检查SMB连接状态_深度学习",
-            "status": "pending",
-            "completed_by": "",
-            "completed_at": ""
+            "status": "completed",
+            "completed_by": "系统架构设计师",
+            "completed_at": "2025-08-13 10:35:17"
         },
         {
             "id": "aabea48f-4a0f-4228-aaca-13d9398ba6bc",
             "name": "检查代码状态_系统架构",
-            "status": "pending",
-            "completed_by": "",
-            "completed_at": ""
+            "status": "completed",
+            "completed_by": "系统架构设计师",
+            "completed_at": "2025-08-13 10:36:20"
+        },
+        {
+            "id": "7f500461-ee5f-40b8-8ecf-c9ceeecb5d2e",
+            "name": "100服务器重置_软件开发",
+            "status": "completed",
+            "completed_by": "软件开发工程师",
+            "completed_at": "2025-08-13 10:36:11"
+        },
+        {
+            "id": "c6b6a5e9-4504-44f1-8504-7695bfaef7dd",
+            "name": "104服务器重置_软件开发",
+            "status": "completed",
+            "completed_by": "软件开发工程师",
+            "completed_at": "2025-08-13 10:36:13"
+        },
+        {
+            "id": "97f6ec17-0f76-46c0-ae34-14fae376701d",
+            "name": "同步实例部署txt_软件开发",
+            "status": "completed",
+            "completed_by": "软件开发工程师",
+            "completed_at": "2025-08-13 10:36:13"
+        },
+        {
+            "id": "8abd5609-9203-4fe9-aaf6-9bc4d4ddc74b",
+            "name": "104服务器实例重置_软件开发",
+            "status": "completed",
+            "completed_by": "软件开发工程师",
+            "completed_at": "2025-08-13 10:36:15"
+        },
+        {
+            "id": "779a4d23-7839-49da-a9a2-e24d41312d64",
+            "name": "VScode连接至服务器_软件开发",
+            "status": "completed",
+            "completed_by": "软件开发工程师",
+            "completed_at": "2025-08-13 10:37:08"
         }
     ],
-    "overall_status": "in_progress",
+    "overall_status": "completed",
     "created_at": "2025-08-02 15:41:40",
-    "updated_at": "2025-08-05 17:46:51"
+    "updated_at": "2025-08-13 10:38:07"
 }

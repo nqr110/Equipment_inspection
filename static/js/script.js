@@ -390,7 +390,8 @@ function handleOfflineAddItem(name) {
   inspectionData.updated_at = new Date().toISOString();
   saveToLocalStorage(inspectionData);
   updateUI();
-  nameInput.value = "";
+  const nameInput = document.getElementById("new-item-name");
+  if (nameInput) nameInput.value = "";
   // 离线状态提示已移除
 }
 

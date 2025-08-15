@@ -147,6 +147,43 @@ def overview():
 def get_inspection():
     return jsonify(inspection_data)
 
+@app.route('/api/inspection', methods=['POST'])
+def sync_inspection():
+    """同步本地缓存的检查数据到服务器（离线回传场景）"""
+    try:
+        payload = request.get_json(silent=True) or {}
+        if not isinstance(payload, dict) or 'items' not in payload:
+            return jsonify({'success': False, 'error': 'Invalid data'}), 400
+
+        items = payload.get('items', [])
+        normalized_items = []
+        for item in items:
+            # 基础字段与简单校验
+            item_id = item.get('id') or str(uuid.uuid4())
+            if isinstance(item_id, str) and item_id.startswith('local-'):
+                item_id = str(uuid.uuid4())
+
+            normalized_items.append({
+                'id': item_id,
+                'name': str(item.get('name', ''))[:100],
+                'status': item.get('status') if item.get('status') in ['pending', 'completed'] else 'pending',
+                'completed_by': str(item.get('completed_by', ''))[:100],
+                'completed_at': str(item.get('completed_at', ''))[:100],
+            })
+
+        # 更新内存数据
+        inspection_data['items'] = normalized_items
+        inspection_data['overall_status'] = payload.get('overall_status', inspection_data.get('overall_status', 'in_progress'))
+        inspection_data['created_at'] = payload.get('created_at', inspection_data.get('created_at', datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
+        inspection_data['updated_at'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+        # 持久化并广播
+        save_inspection_data()
+        broadcast_inspection_update()
+        return jsonify({'success': True, 'data': inspection_data})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
 def sanitize_input(text):
     """清理输入文本，移除潜在的恶意内容"""
     if not isinstance(text, str):
@@ -255,9 +292,10 @@ def update_item_status(item_id):
     return jsonify({'success': True, 'data': inspection_data})
 
 if __name__ == '__main__':
-    # 启动主应用在4999端口
-    socketio.run(app, host='192.168.1.99', port=4999, debug=True)
+    # 绑定到 0.0.0.0 以便在无外网/局域网环境中可被其他设备访问
+    socketio.run(app, host='0.0.0.0', port=4999, debug=True)
 
 
-# http://192.168.1.99:4999
-# http://192.168.1.99:4999/overview
+# 示例访问：
+# http://<本机或局域网IP>:4999
+# http://<本机或局域网IP>:4999/overview

@@ -226,6 +226,12 @@ h1 {
     background-color: white;
 }
 
+/* 放大“检查项名称”（表格第1列）的字体为原来的两倍，仅数据单元格 */
+#inspection-table td:first-child {
+	font-size: 28px;
+	font-weight: 600;
+}
+
 #inspection-table tbody tr:hover {
     background-color: #f6f8fa;
 }

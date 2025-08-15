@@ -16,15 +16,24 @@ document.addEventListener("DOMContentLoaded", function () {
 // 初始化WebSocket连接
 function initWebSocket() {
     if (socket) return;
-    
-    // 使用Socket.IO连接到主服务器
-    socket = io('/inspection');
-    
+    if (typeof window !== 'undefined' && typeof window.io !== 'function') {
+        console.log('Socket.IO 客户端不可用，使用轮询模式');
+        return;
+    }
+
+    try {
+        socket = io('/inspection');
+    } catch (err) {
+        console.warn('初始化 Socket.IO 失败，使用轮询模式', err);
+        socket = null;
+        return;
+    }
+
     socket.on('connect', function () {
         console.log("观赏页面WebSocket连接已建立");
         isOnline = true;
     });
-    
+
     socket.on('inspection_update', function (data) {
         console.log("观赏页面收到实时更新:", data);
         if (data.type === "full_update") {
@@ -32,15 +41,14 @@ function initWebSocket() {
             updateUI();
         }
     });
-    
+
     socket.on('disconnect', function () {
         console.log("观赏页面WebSocket连接已关闭");
         socket = null;
         isOnline = false;
-        // 尝试重新连接
         setTimeout(initWebSocket, 3000);
     });
-    
+
     socket.on('connect_error', function (error) {
         console.error("观赏页面WebSocket错误:", error);
         isOnline = false;
